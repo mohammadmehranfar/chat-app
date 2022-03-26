@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { sendMessage , isTyping } from 'react-chat-engine';
 import { SendOutlined , PictureOutlined } from '@ant-design/icons';
-const MessageForm = ({props}) => {
+const MessageForm = props => {
     const [value,setValue] = useState('');
     const { chatId , creds } = props;
     const submitHandler = event => {
         event.preventDefault();
-        const txt = value.trim();
-        if(txt.length > 0) sendMessage(creds,chatId,{txt});
+        const text = value.trim();
+        if(text.length > 0) sendMessage(creds,chatId,{text});
         setValue('');
     }
     const handleChange = event => {

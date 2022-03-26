@@ -1,6 +1,7 @@
 import React from 'react';
 
 const MyMessage = ({message}) => {
+    console.log(message);
     if(message?.attachment?.length > 0){
         return (
             <img
@@ -12,8 +13,8 @@ const MyMessage = ({message}) => {
         )
     }
     return (
-        <div className='message' style = {{float : 'right' , marginRight : '18px' , color : 'white' , backgroundColor : '3B2A50'}}>
-            {message.text}
+        <div className='message' style = {{float : 'right' , marginRight : '18px' , color : 'white' , backgroundColor : '#3B2A50'}}>
+            {message?.text}
         </div>
     );
 };
